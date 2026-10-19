@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio Manager</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 1000px; margin: 20px auto; padding: 0 10px; }
+    h1 { text-align: center; }
+    form { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 20px; }
+    input, textarea { padding: 8px; width: 100%; box-sizing: border-box; }
+    textarea { grid-column: span 2; }
+    .buttons { grid-column: span 2; }
+    button { padding: 8px 14px; cursor: pointer; margin-right: 5px; }
+    table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    th, td { border: 1px solid #ccc; padding: 6px; text-align: left; }
+    th { background: #eee; }
+    #message { text-align: center; color: green; min-height: 20px; }
+  </style>
+</head>
+<body>
+  <h1>Portfolio Manager</h1>
+  <p id="message"></p>
+
+  <form id="portfolioForm">
+    <input type="hidden" id="recordId">
+    <input type="text" id="owner_name" placeholder="Owner name *" required>
+    <input type="text" id="job_title" placeholder="Job title">
+    <input type="email" id="email" placeholder="Email">
+    <input type="text" id="phone" placeholder="Phone">
+    <input type="text" id="location" placeholder="Location">
+    <input type="text" id="skills" placeholder="Skills">
+    <textarea id="bio" rows="3" placeholder="Short bio"></textarea>
+    <div class="buttons">
+      <button type="submit" id="saveBtn">Add Record</button>
+      <button type="button" id="cancelBtn">Cancel Edit</button>
+    </div>
+  </form>
+
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th><th>Name</th><th>Job Title</th><th>Email</th><th>Phone</th>
+        <th>Location</th><th>Skills</th><th>Bio</th><th>Actions</th>
+      </tr>
+    </thead>
+    <tbody id="tableBody"></tbody>
+  </table>
+
+  <script src="app.js"></script>
+</body>
+</html>
